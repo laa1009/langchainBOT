@@ -20,8 +20,8 @@
 }
 
 .chat-widget-button img {
-    width: 30px;
-    height: 30px;
+    width: 70px;
+    height: 70px;
 }
 
 .chat-widget-container {
@@ -71,7 +71,7 @@
     border: none;
     color: white;
     font-size: 16px;
-    cursor: pointer;
+    cursor:progress;
     margin-left: 10px;
     padding: 0 5px;
 }
@@ -98,6 +98,32 @@
     padding: 15px;
     border-top: 1px solid #eee;
     display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+#send-button {
+    padding: 10px 15px;
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+#send-button:hover {
+    background-color: #005bb5;
 }
 
 .message {
