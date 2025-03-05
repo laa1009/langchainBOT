@@ -1,0 +1,29 @@
+{
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Inicio de sesión",
+            "weight": "bolder",
+            "size": "medium"
+        },
+        {
+            "type": "Input.Text",
+            "id": "username",
+            "placeholder": "Usuario"
+        },
+        {
+            "type": "Input.Text",
+            "id": "password",
+            "placeholder": "Contraseña",
+            "style": "password"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Iniciar sesión"
+        }
+    ]
+}

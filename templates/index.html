@@ -3,22 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SharePoint Sites</title>
+    <title>Demo de Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/adaptive-cards.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0078d4;
+        }
+    </style>
 </head>
 <body>
-    <h1>Obtener Sitios de SharePoint</h1>
-    <button onclick="getSites()">Cargar Sitios</button>
-    <pre id="output"></pre>
+    <div class="container">
+        <h1>Demo de Chatbot Asistente</h1>
+        <p>Esta es una demostración del widget de chat. Haz clic en el botón flotante para iniciar una conversación.</p>
+    </div>
 
-    <script>
-        function getSites() {
-            fetch('/get-sites')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('output').textContent = JSON.stringify(data, null, 2);
-                })
-                .catch(error => console.error('Error:', error));
-        }
-    </script>
+    <!-- Botón flotante para abrir el chat -->
+    <div id="chat-widget-button" class="chat-widget-button">
+        <img src="{{ url_for('static', filename='images/chat-icon.png') }}" alt="Chat" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22white%22><path d=%22M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z%22/></svg>'">
+    </div>
+
+    <!-- Contenedor principal del chat -->
+    <div id="chat-widget-container" class="chat-widget-container hidden">
+        <!-- Encabezado del chat -->
+        <div class="chat-header">
+            <div class="chat-title">Asistente Virtual</div>
+            <div class="chat-controls">
+                <button id="minimize-chat" class="control-button">_</button>
+                <button id="close-chat" class="control-button">×</button>
+            </div>
+        </div>
+
+        <!-- Área de mensajes -->
+        <div id="chat-messages" class="chat-messages"></div>
+
+        <!-- Área de entrada -->
+        <div class="chat-input-area">
+            <textarea id="chat-input" placeholder="Escribe un mensaje..."></textarea>
+            <button id="send-message">Enviar</button>
+        </div>
+    </div>
+
+    <!-- Cargar la biblioteca de Adaptive Cards -->
+    <script src="https://unpkg.com/adaptivecards/dist/adaptivecards.min.js"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
 </body>
 </html>

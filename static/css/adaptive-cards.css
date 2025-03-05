@@ -1,0 +1,43 @@
+.ac-container {
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.ac-input {
+    margin-bottom: 10px;
+}
+
+.ac-textBlock {
+    margin-bottom: 10px;
+}
+
+.ac-pushButton {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.ac-pushButton:hover {
+    background-color: #005a9e;
+}
+
+.ac-input-container {
+    width: 100%;
+}
+
+.ac-input.ac-textInput {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.ac-input.ac-textInput.ac-input-validation-failed {
+    border-color: #d83b01;
+}

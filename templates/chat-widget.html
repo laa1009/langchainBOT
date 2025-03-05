@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/adaptive-cards.css') }}">
+</head>
+<body>
+    <!-- Botón flotante para abrir el chat -->
+    <div id="chat-widget-button" class="chat-widget-button">
+        <img src="{{ url_for('static', filename='images/chat-icon.png') }}" alt="Chat">
+    </div>
+
+    <!-- Contenedor principal del chat -->
+    <div id="chat-widget-container" class="chat-widget-container hidden">
+        <!-- Encabezado del chat -->
+        <div class="chat-header">
+            <span class="chat-title">Chatbot</span>
+            <div class="chat-controls">
+                <button id="minimize-button" class="control-button">_</button>
+                <button id="close-button" class="control-button">X</button>
+            </div>
+        </div>
+
+        <!-- Área de mensajes -->
+        <div class="chat-messages" id="chat-messages"></div>
+
+        <!-- Área de entrada -->
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Escribe un mensaje...">
+            <button id="send-button">Enviar</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
