@@ -1,10 +1,6 @@
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
-<<<<<<< HEAD
-
-=======
->>>>>>> 50e70f4 (Add OpenAI client integration and chat completion example)
 load_dotenv()
 api_key = os.getenv("api_key")
 client = OpenAI(
@@ -31,10 +27,6 @@ stream = client.chat.completions.create(
          "content": "Y en cuanto a chatGPT con su modelo 4o, cuál es el recomendado de longitud que debería tener un chat para no empezar con imprecisiones? es decir en texto haciendo la conversión a tokens del input y output promedio, o si puedes en tiempo de charla contínua."}],
     stream=True,
 )
-<<<<<<< HEAD
-for chunk in stream:
-=======
 for chunk in stream: 
->>>>>>> 50e70f4 (Add OpenAI client integration and chat completion example)
     if chunk.choices[0].delta.content is not None:
         print(chunk.choices[0].delta.content, end="")
