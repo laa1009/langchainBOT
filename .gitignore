@@ -11,4 +11,14 @@ __pycache__/
 # Archivos de configuración de VSCode
 .vscode/
 
+# Archivos de configuración de React
+node_modules/
+build/
+*.log
+
+# Archivos de configuración de paquetes
+package-lock.json
+yarn.lock
+
+# Archivos de configuración de React
 *.docx
